@@ -1,0 +1,17 @@
+{
+    "launch_path": "/index.html",
+    "installs_allowed_from": [
+        "*"
+    ],
+    "version": "0.1",
+    "name": "COS medical calculator",
+    "pkgName": "com.ionicframework.starter",
+    "description": "COS is a medical calculator, designed to help physicians and medical students to calculate and interpret medical scales, scores and indexes, including BMI, Glasgow Coma Scale, Apgar Index, MELD score and many others. More stuff will be added in next versions, so please feel free to mail the author to point out any useful tool currently missing.",
+    "developer": {
+        "name": "Lorenzo Guizzaro"
+    },
+    "icons": {
+		"64": "/img/medscales64.png",
+		"128": "/img/medscales128.png"
+	}
+}

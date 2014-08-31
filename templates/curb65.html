@@ -1,0 +1,45 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/pneumo">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            
+            <ion-checkbox class="checkbox-dark" ng-model="confusion.value">Confusion</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="bun.value">BUN > 19 mg/dL</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="respiratory.value">Respiratory Rate ≥ 30</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="pressure.value">Systolic BP &#60; 90mmHg</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="pressure2.value">Diastolic BP &#60; 60mmHg</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="age.value">Age ≥ 65</ion-checkbox>
+
+            
+        </div>
+
+
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+
+        <a class="item item-icon-left">
+            CURB65 score
+            <span class="badge badge-{{smartColor}}">{{curb65}}</span>
+        </a>
+
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Treat as outpatient<span class="badge badge-balanced">0-1</span></a>
+            <a class="item item-icon-left">Consider hospitalisation<span class="badge badge-energized">2-3</span></a>
+            <a class="item item-icon-left">Requires hospitalisation<span class="badge badge-assertive">4-5</span></a>
+
+        </div>
+
+
+  </ion-content>
+</ion-pane>

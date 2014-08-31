@@ -1,0 +1,38 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="curb65Help = !curb65Help" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/curb65')">CURB-65</h2>
+        <i ng-click="goTo('#/curb65')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="curb65Help">
+            <h5>Score for for predicting mortality in community-acquired pneumonia., using Blood Urea Nitrogen (BUN) and informations available from a standard examination.</h5>
+        </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="tiffHelp = !tiffHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/tiff')">Tiffeneau-Pinelli index</h2>
+        <i ng-click="goTo('#/tiff')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="tiffHelp">
+            <h5>Useful score to help discriminating obstructive and restrictive diseases, using FEV1 (Forced expiratory volume in 1 second) and FVC (Forced vital capacity).</h5>
+        </div>
+
+     
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

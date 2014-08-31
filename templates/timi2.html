@@ -1,0 +1,67 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/cardio">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+            
+            <div class="item item-divider">History</div>
+            <ion-checkbox class="checkbox-dark" ng-model="age.value">Age 65 - 74</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="age2.value">Age ≥ 75</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="diabetes.value">Diabetes</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="hyper.value">Hypertension</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="angina.value">Angina</ion-checkbox>
+            
+            <div class="item item-divider">Exam</div>
+            <ion-checkbox class="checkbox-dark" ng-model="sbp.value">SBP &#60; 100 mmHg</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="hr.value">HR &#62; 100/min</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="killip.value">Killip II - IV</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="weight.value">Weight &#60; 67kg</ion-checkbox>
+            
+            <div class="item item-divider">Presentation</div>
+            <ion-checkbox class="checkbox-dark" ng-model="anterior.value">Anterior or LBBB</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="time.value">t to treat &#62; 4hr</ion-checkbox>
+
+
+            
+        </div>
+
+
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+
+        <a class="item item-icon-left">
+            TIMI Score
+            <span class="badge badge-{{smartColor}}">{{score}}</span>
+        </a>
+      
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            
+            <div class="item item-divider">Mortality at 30 days by STEMI</div>
+
+            <a class="item item-icon-left">0<span class="badge badge-balanced">0.8%</span></a>
+            <a class="item item-icon-left">1<span class="badge badge-balanced">1.6%</span></a>
+            <a class="item item-icon-left">2<span class="badge badge-energized">2.2%</span></a>
+            <a class="item item-icon-left">3<span class="badge badge-energized">4.4%</span></a>
+            <a class="item item-icon-left">4<span class="badge badge-energized">7.3%</span></a>
+            <a class="item item-icon-left">5<span class="badge badge-energized">12.4%</span></a>
+            <a class="item item-icon-left">6<span class="badge badge-assertive">16.1%</span></a>
+            <a class="item item-icon-left">7<span class="badge badge-assertive">23.4%</span></a>
+            <a class="item item-icon-left">8<span class="badge badge-assertive">26.8%</span></a>
+            <a class="item item-icon-left">&#62; 8<span class="badge badge-assertive">35.9%</span></a>
+
+        </div>
+
+
+
+
+  </ion-content>
+</ion-pane>

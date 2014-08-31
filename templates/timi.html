@@ -1,0 +1,42 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/cardio">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            <ion-checkbox class="checkbox-dark" ng-model="age.value">Age ≥ 65</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="asa.value">ASA use (last 7 days)</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="angina.value">≥ 2 angina episodes (last 24hrs)</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="st.value">EKG ST changes ≥ 0.5mm</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="markers.value">Biomarkers +</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="stenosis.value">Coronary stenosis ≥ 50%</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf1.value">Diabetes</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf2.value">SBP ≥ 140mmHg</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf3.value">DBP ≥ 90mmHg</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf4.value">Antihypertensive medication</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf5.value">Hypercholesterolemia</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf6.value">Familiarity for premature CAD</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="riskf7.value">Cigarette smoking</ion-checkbox>
+
+            
+        </div>
+
+
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+
+        <a class="item item-icon-left">
+            TIMI Score
+            <span class="badge badge-{{smartColor}}">{{score}}</span>
+        </a>
+
+
+
+
+  </ion-content>
+</ion-pane>

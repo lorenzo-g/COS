@@ -1,0 +1,207 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/neuro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="als-view">
+            <div>
+                <ion-checkbox class="checkbox-dark" ng-click="showAlternative = !showAlternative">With gastrostomy</ion-checkbox>
+            </div>
+            <div class="item item-divider">Speech</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="speech">
+                    <option value="4">Normal speech processes</option>
+                    <option value="3">Detectable speech disturbance</option>
+                    <option value="2">Intelligible with repeating</option>
+                    <option value="1">Speech combined with nonvocal communication</option>
+                    <option value="0">Loss of useful speech</option>    
+                </select>
+            </label>
+            <div class="item item-divider">Salivation</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="salivation">
+                    <option value="4">Normal</option>
+                    <option value="3">Slight but definite excess of saliva in mouth, mat have nighttime drooling</option>
+                    <option value="2">Moderately excessive saliva; may have some drooling</option>
+                    <option value="1">Marked eccess of saliva with some drooling</option>
+                    <option value="0">Marked drooling; requires constant tissue or handkerchief</option>     
+                </select>
+            </label>
+            <div class="item item-divider">Swallowing</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="swallowing">
+                    <option value="4">Normal eating habits</option>
+                    <option value="3">Early eating problems - occasional choking</option>
+                    <option value="2">Dietary consistency changes</option>
+                    <option value="1">Needs supplemental tube feeding</option>
+                    <option value="0">NPO (exclusively parenteral or enteral feeding)</option>         
+                </select>
+            </label>
+            <div class="item item-divider">Handwriting</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="handwriting">
+                    <option value="4">Normal</option>
+                    <option value="3">Slow or sloppy: all words are legible</option>
+                    <option value="2">Not all words are legible</option>
+                    <option value="1">Able to grip pen but unable to write</option>
+                    <option value="0">Unable to grip pen</option>       
+                </select>
+            </label>
+            <div class="item item-divider">Cutting food/ handling utensils</div>
+            <label class="item item-input item-select" ng-hide="showAlternative">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="utensils">
+                    <option value="4">Normal</option>
+                    <option value="3">Somewhat slow and clumsy, but no help needed</option>
+                    <option value="2">Can cut most foods, although clumsy and slow; some help needed</option>
+                    <option value="1">Food must be cut by someone, but can still feed slowly</option>
+                    <option value="0">Needs to be fed</option>               
+                </select>
+            </label>
+            <label class="item item-input item-select" ng-show="showAlternative">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="utensilsAlternative">
+                    <option value="4">Normal</option>
+                    <option value="3">Clumsy but able to perform all manipulations independently</option>
+                    <option value="2">Some help needed with closures and fasteners</option>
+                    <option value="1">Provides minimal assistance to caregiver</option>
+                    <option value="0">Unable to perform any aspect of task</option>    
+                </select>
+            </label>
+            <div class="item item-divider">Dressing and hygiene</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="dressing">
+                    <option value="4">Normal</option>
+                    <option value="3">Somewhat slow and clumsy, but no help needed</option>
+                    <option value="2">Intermittent assistence or substitute methods</option>
+                    <option value="1">Needs attendant for self-care</option>
+                    <option value="0">Total dependence</option>
+                </select>
+            </label>
+            <div class="item item-divider">Turning in bed and adjusting bed clothes</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="bed">
+                    <option value="4">Normal</option>
+                    <option value="3">Somewhat slow and clumsy, but no help needed</option>
+                    <option value="2">Can turn alone or adjust sheets, but with great difficulty</option>
+                    <option value="1">Can initiate, but not turn or adjust sheets alone</option>
+                    <option value="0">Helpless</option>   
+                </select>
+            </label>
+            <div class="item item-divider">Walking</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="walking">
+                    <option value="4">Normal</option>
+                    <option value="3">Early ambulation difficulties</option>
+                    <option value="2">Walks with assistance</option>
+                    <option value="1">Nonambulatory functional movement</option>
+                    <option value="0">No purposeful leg movement</option>   
+                </select>
+            </label>
+            <div class="item item-divider">Climbing stairs</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="stairs">
+                    <option value="4">Normal</option>
+                    <option value="3">Slow</option>
+                    <option value="2">Mild unsteadiness or fatigue</option>
+                    <option value="1">Needs assistance</option>
+                    <option value="0">Cannot do</option>   
+                </select>
+            </label>
+            <div class="item item-divider">Dyspnea</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="dyspnea">
+                    <option value="4">None</option>
+                    <option value="3">Occurs when walking</option>
+                    <option value="2">Occurs when one or more of the following: eating, bathing, dressing (ADL)</option>
+                    <option value="1">Occurs at rest, difficulty breathing when either sitting or lying</option>
+                    <option value="0">Significant difficulty, considering using mechanical respiratory support</option>   
+                </select>
+            </label>
+            <div class="item item-divider">Orthopnea</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="orthopnea">
+                    <option value="4">None</option>
+                    <option value="3">Some difficulty sleeping at night due to shortness of breath, does not routinely use more                                         than two pillows</option>
+                    <option value="2">Needs extra pillows in order to sleep (more than two)</option>
+                    <option value="1">Can only sleep sitting up</option>
+                    <option value="0">Unable to sleep</option>   
+                </select>
+            </label>
+            <div class="item item-divider">Respiratory insufficiency</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="respIns">
+                    <option value="4">None</option>
+                    <option value="3">Intermittent use of BiPAP</option>
+                    <option value="2">Continuous use of BiPAP during the night</option>
+                    <option value="1">Continuous use of BiPAP during the night and day</option>
+                    <option value="0">Invasive mechanical ventilation by intubation or tracheostomy</option>   
+                </select>
+            </label>
+            <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left" ng-hide="showAlternative">
+            Score
+            <span class="badge badge-energized">{{score}}</span>
+        </a>
+        <a class="item item-icon-left" ng-show="showAlternative">
+            Score
+            <span class="badge badge-energized">{{scoreAlt}}</span>
+        </a>
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Score for functioning<span class="badge badge-energized">0 - 48</span></a>
+
+
+        </div>
+
+
+
+
+
+  </ion-content>
+</ion-pane>

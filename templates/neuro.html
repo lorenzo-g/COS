@@ -1,0 +1,59 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="gcsHelp = !gcsHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/gcs')">Glasgow Coma Scale</h2>
+        <i ng-click="goTo('#/gcs')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="gcsHelp">
+            <h5>The Glasgow Coma Scale (GCS) was first introduced in the 1970s to provide a simple and reliable method of recording and monitoring change in the level of consciousness of head injured patients. Since its introduction, the GCS has been widely utilized in the trauma community and its use expanded beyond the original intentions of the score. (Gabbe, 2003)</h5>
+        </div>
+        
+
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="abcd2Help = !abcd2Help" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/abcd2')">ABCD2 Score</h2>
+        <i ng-click="goTo('#/abcd2')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+        <div id="interpret-div" ng-show="abcd2Help">
+            <h5>The ABCD score is a risk assessment tool designed to improve the prediction of short-term stroke risk after a transient ischemic attack (TIA). The score is optimized to predict the risk of stroke within 2 days after a TIA, but also predicts stroke risk within 90 days. (http://www.stroke.org/)</h5>
+        </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="alsHelp = !alsHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/als')">ALSFRS-R</h2>
+        <i ng-click="goTo('#/als')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="alsHelp">
+            <h5>Rating instrument for monitoring the progression of disability in patients with amyotrophic lateral sclerosis (ALS), as revised by Cedarbaum et al., 1999.</h5>
+      </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="hisHelp = !hisHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/his')">Hachinski ischaemic score</h2>
+        <i ng-click="goTo('#/his')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="hisHelp">
+            <h5>Easy-to-use tool to discriminate vascular and degenerative dementias.</h5>
+      </div>
+
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

@@ -1,0 +1,51 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/neuro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            <ion-checkbox class="checkbox-dark" ng-model="abrupt.value">Abrupt onset</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="step.value">Stepwise deterioration</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="fluctu.value">Fluctuating course</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="night.value">Nocturnal confusion</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="person.value">Preservation of personality </ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="depression.value">Depression</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="somatic.value">Somatic complaints</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="emotional.value">Emotional incontinence</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="hyper.value">History of hypertension</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="strokes.value">History of strokes</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="arterio.value">Associated atherosclerosis</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="f1.value">Focal neurological symptoms</ion-checkbox>
+            <ion-checkbox class="checkbox-dark" ng-model="f2.value">Focal neurological signs</ion-checkbox>
+
+            
+        </div>
+
+
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+
+        <a class="item item-icon-left">
+            Score
+            <span class="badge badge-{{smartColor}}">{{score}}</span>
+        </a>
+
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Degenerative<span class="badge badge-assertive">0 - 4</span></a>
+            <a class="item item-icon-left">Unconclusive<span class="badge badge-dark">5 - 6</span></a>
+            <a class="item item-icon-left">Multi-infarctual<span class="badge badge-energized">≥ 7</span></a>
+
+        </div>
+
+
+  </ion-content>
+</ion-pane>

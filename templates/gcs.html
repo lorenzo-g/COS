@@ -1,0 +1,73 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/neuro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="gcs-view">
+            <div class="item item-divider">Eye response</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="eye">
+                    <option value="0">Not evaluable</option>
+                    <option value="1">No opening</option>
+                    <option value="2">Opens for painful stimulus</option>
+                    <option value="3">Opens in response to voice</option>
+                    <option value="4">Opens spontainously</option>
+                </select>
+            </label>
+            <div class="item item-divider">Verbal response</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="verbal">
+                    <option value="1">No verbal response</option>
+                    <option value="2">Incomprehensible sounds</option>
+                    <option value="3">Inappropriate words</option>
+                    <option value="4">Confused</option>
+                    <option value="5">Oriented</option>
+                    <option value="0">Tracheal intubation</option>
+                </select>
+            </label>
+            <div class="item item-divider">Motor response</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="motor">
+                    <option value="1">No motor response</option>
+                    <option value="2">Decerebrate posturing</option>
+                    <option value="3">Decorticate posturing</option>
+                    <option value="4">Withdrawal from pain</option>
+                    <option value="5">Localizes to pain</option>
+                    <option value="6">Obeys simple commands</option>
+                </select>
+            </label>
+            <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            Value
+            <span class="badge badge-{{smartColor}}">{{score}} {{notes}}</span>
+        </a>
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Mild brain injury<span class="badge badge-balanced">≥ 13</span></a>
+            <a class="item item-icon-left">Moderate brain injury<span class="badge badge-energized">9 - 12</span></a>
+            <a class="item item-icon-left">Severe brain injury<span class="badge badge-assertive">≤ 8</span></a>
+            <a class="item item-icon-left">Eye response not eval.<span class="badge badge-energized">c</span></a>
+            <a class="item item-icon-left">Vocal response not eval.<span class="badge badge-energized">t</span></a>
+        </div>
+
+
+
+  </ion-content>
+</ion-pane>

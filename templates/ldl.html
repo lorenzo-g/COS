@@ -1,0 +1,45 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/metab">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            <div class="row">
+                <div class="col col-75">HDL (mg/dl)</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="hdl"></input>
+                                 </label></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col col-75">Total cholesterol (mg/dl)</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="tc"></input>
+                                 </label></div>
+            </div>
+    
+            <div class="row">
+                <div class="col col-75">Triglycerides (mg/dl)</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="tri"></input>
+                                 </label></div>
+            </div>
+    
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            LDL
+            <span class="badge badge-{{smartColor}}">{{ldl}}</span>
+        </a>
+
+
+
+  </ion-content>
+</ion-pane>

@@ -1,0 +1,38 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="meldHelp = !meldHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/meld')">MELD score</h2>
+        <i ng-click="goTo('#/meld')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="meldHelp">
+            <h5>MELD Score for end-stage liver disease.</h5>
+        </div>
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="cpsHelp = !cpsHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/cps')">Child-Pugh score</h2>
+        <i ng-click="goTo('#/cps')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="cpsHelp">
+            <h5>Score for the assessment of prognosis of patients with chronic liver disease.</h5>
+        </div>
+        
+    
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

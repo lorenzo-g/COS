@@ -1,0 +1,29 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="apgarHelp = !apgarHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/apgar')">Apgar Index</h2>
+        <i ng-click="goTo('#/apgar')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="apgarHelp">
+            <h5>A simple method to assess the health of newborn children immediately after birth. The test is generally done at one and five minutes after birth, and may be repeated later if the score is and remains low.</h5>
+        </div>
+     
+
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

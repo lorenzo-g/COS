@@ -1,0 +1,51 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="qtHelp = !qtHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/qtc')">QTc (Bazett Formula)</h2>
+        <i ng-click="goTo('#/qtc')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="qtHelp">
+            <h5>Widely used formula to obtain an estimate of a value for QT interval not dependent upon heart rate.</h5>
+        </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="timiHelp = !timiHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/timi')">TIMI for UA/NSTEMI</h2>
+        <i ng-click="goTo('#/timi')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="timiHelp">
+            <h5>Risk score for patients presenting with Unstable Angina or Non-ST Elevation Myocardial Infarction.</h5>
+        </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="timi2Help = !timi2Help" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/timi2')">TIMI for STEMI</h2>
+        <i ng-click="goTo('#/timi2')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="timi2Help">
+            <h5>Risk score for patients presenting with ST Elevation Myocardial Infarction.</h5>
+        </div>
+        
+        
+      
+
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

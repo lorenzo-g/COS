@@ -1,0 +1,356 @@
+/*
+Lorenzo Guizzaro, MD
+code of this file released under GNU General Public License v3.0
+*/
+
+var app = angular.module('medScales',['ionic']);
+
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
+app.config(function($stateProvider, $urlRouterProvider, $compileProvider) {
+    $stateProvider.
+        state('main', {
+            url         : '/',
+            templateUrl : 'templates/main.html',
+            controller  : 'MainCtrl'
+        }).
+        state('neuro', {
+            url         : '/neuro',
+            templateUrl : 'templates/neuro.html',
+            controller  : 'neuroCtrl'
+        }).
+        state('biostat', {
+            url         : '/biostat',
+            templateUrl : 'templates/biostat.html',
+            controller  : 'biostatCtrl'
+        }).
+        state('cardio', {
+            url         : '/cardio',
+            templateUrl : 'templates/cardio.html',
+            controller  : 'cardioCtrl'
+        }).
+        state('gastro', {
+            url         : '/gastro',
+            templateUrl : 'templates/gastro.html',
+            controller  : 'gastroCtrl'
+        }).
+        state('metab', {
+            url         : '/metab',
+            templateUrl : 'templates/metab.html',
+            controller  : 'metabCtrl'
+        }).
+        state('rr', {
+            url         : '/rr',
+            templateUrl : 'templates/rr.html',
+            controller  : 'rrCtrl'
+        }).
+        state('sensspec', {
+            url         : '/sensspec',
+            templateUrl : 'templates/sensspec.html',
+            controller  : 'sensspecCtrl'
+        }).
+        state('pnpv', {
+            url         : '/pnpv',
+            templateUrl : 'templates/pnpv.html',
+            controller  : 'pnpvCtrl'
+        }).
+        state('pnpv1', {
+            url         : '/pnpv1',
+            templateUrl : 'templates/pnpv1.html',
+            controller  : 'pnpv1Ctrl'
+        }).
+        state('pnpv2', {
+            url         : '/pnpv2',
+            templateUrl : 'templates/pnpv2.html',
+            controller  : 'pnpv2Ctrl'
+        }).
+        state('gcs', {
+            url         : '/gcs',
+            templateUrl : 'templates/gcs.html',
+            controller  : 'gcsCtrl'
+        }).
+        state('bmi', {
+            url         : '/bmi',
+            templateUrl : 'templates/bmi.html',
+            controller  : 'bmiCtrl'
+        }).
+        state('qtc', {
+            url         : '/qtc',
+            templateUrl : 'templates/qtc.html',
+            controller  : 'qtcCtrl'
+        }).
+        state('abcd2', {
+            url         : '/abcd2',
+            templateUrl : 'templates/abcd2.html',
+            controller  : 'abcd2Ctrl'
+        }).
+        state('odds', {
+            url         : '/odds',
+            templateUrl : 'templates/odds.html',
+            controller  : 'oddsCtrl'
+        });
+
+
+    $urlRouterProvider.otherwise('/');
+
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|app):/);
+});
+
+app.controller('MainCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "MedScales";
+}]);
+
+app.controller('neuroCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Neurology";
+}]);
+
+app.controller('biostatCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Epidemiology";
+}]);
+
+app.controller('cardioCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Cardiology";
+}]);
+
+app.controller('gastroCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Gastroenterology";
+}]);
+
+app.controller('metabCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Matabolism";
+}]);
+
+app.controller('aboutCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "About";
+}]);
+
+app.controller('pnpvCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Predictive Values";
+}]);
+
+app.controller('pnpv1Ctrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Predictive values";
+        $scope.ppv="-";
+        $scope.npv="-";
+        
+        $scope.calculate = function() {
+            p11 = parseFloat(document.getElementById("p11").value);
+            p12 = parseFloat(document.getElementById("p12").value);
+            p21 = parseFloat(document.getElementById("p21").value);
+            p22 = parseFloat(document.getElementById("p22").value);
+            $scope.ppv = roundToTwo(p11/(p11+p12)*100);
+            $scope.npv = roundToTwo(p22/(p22+p21)*100);
+        };
+}]);
+
+app.controller('pnpv2Ctrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Predictive Values";
+        $scope.ppv="-";
+        $scope.npv="-";
+        
+        $scope.calculate = function() {
+            sens = document.getElementById("sens").value/100;
+            spec = document.getElementById("spec").value/100;
+            prev = document.getElementById("prev").value/100;
+            $scope.ppv = roundToTwo((sens*prev)/(sens*prev)+((1 - spec)* (1 - prev))*100);
+            $scope.npv = roundToTwo((spec*(1 - prev))/((spec*(1 - prev))+((1 - sens)* prev))*100);
+        };
+}]);
+
+
+app.controller('oddsCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Odds Ratio";
+        $scope.or="-";
+        
+        $scope.calculate = function() {
+            p11 = parseFloat(document.getElementById("p11").value);
+            p12 = parseFloat(document.getElementById("p12").value);
+            p21 = parseFloat(document.getElementById("p21").value);
+            p22 = parseFloat(document.getElementById("p22").value);
+            $scope.or = roundToTwo((p11*p22)/(p12*p21));
+        };
+}]);
+
+app.controller('rrCtrl', ['$scope',
+    function($scope) {
+        $scope.smartColor = "assertive";
+        $scope.pname = "Risk Ratio";
+        $scope.rr="-";
+        
+        $scope.calculate = function() {
+            p11 = parseFloat(document.getElementById("p11").value);
+            p12 = parseFloat(document.getElementById("p12").value);
+            p21 = parseFloat(document.getElementById("p21").value);
+            p22 = parseFloat(document.getElementById("p22").value);
+            $scope.rr = roundToTwo((p11/(p11+p12))/(p21/(p21+p22)));
+        
+            if ($scope.rr == 1){
+                $scope.smartColor = "energized";
+            } else if ($scope.rr < 1){
+                $scope.smartColor = "balanced";
+            } else {
+                $scope.smartColor = "assertive";
+            };
+        
+        };
+}]);
+
+app.controller('sensspecCtrl', ['$scope',
+    function($scope) {
+        $scope.pname = "Sensitivity and specificity";
+        $scope.sens="-";
+        $scope.spec="-";
+        
+        $scope.calculate = function() {
+            p11 = parseFloat(document.getElementById("p11").value);
+            p12 = parseFloat(document.getElementById("p12").value);
+            p21 = parseFloat(document.getElementById("p21").value);
+            p22 = parseFloat(document.getElementById("p22").value);
+            $scope.sens = roundToTwo((p11/(p11+p21))*100);
+            $scope.spec = roundToTwo((p22/(p22+p12))*100);
+        };
+}]);
+
+app.controller('gcsCtrl', ['$scope',
+    function($scope) {
+        $scope.smartColor = "assertive";
+        $scope.pname = "Glasgow Coma Scale";
+        $scope.score = "-";
+        $scope.notes = "";
+        $scope.calculate = function() {
+            $scope.notes = "";
+            eye = parseFloat(document.getElementById("eye").value);
+            verbal = parseFloat(document.getElementById("verbal").value);
+            motor = parseFloat(document.getElementById("motor").value);
+            $scope.score = eye + motor + verbal;
+            if (eye == 0){
+                $scope.score += 1;
+                $scope.notes += "c"
+            };
+            if (verbal == 0){
+                $scope.score +=1;
+                $scope.notes += "t"
+            };
+            
+            if ($scope.score >= 13){
+                $scope.smartColor = "balanced";
+            } else if ($scope.score >= 9){
+                $scope.smartColor = "energized";
+            } else {
+                $scope.smartColor = "assertive";
+            };
+            
+        };
+        
+}]);
+
+app.controller('bmiCtrl', ['$scope',
+    function($scope) {
+        $scope.smartColor = "assertive";
+        $scope.pname = "Body Mass Index (BMI)";
+        $scope.bmi="-";
+        $scope.showInterpret = false;
+
+        $scope.calculate = function() {
+            height = document.getElementById("height").value/100;
+            weight = document.getElementById("weight").value;
+            $scope.bmi = roundToTwo(weight/(height*height));
+            
+            if ($scope.bmi >= 18.5 && $scope.bmi < 25){
+                $scope.smartColor = "balanced";
+            } else if ($scope.bmi >= 25 && $scope.bmi < 30){
+                $scope.smartColor = "energized";
+            } else {
+                $scope.smartColor = "assertive";
+            };
+        };
+}]);
+
+app.controller('abcd2Ctrl', ['$scope',
+    function($scope) {
+        $scope.smartColor = "assertive";
+        $scope.pname = "ABCD2 Score";
+        $scope.abcd2="-";
+        $scope.showInterpret = false;
+        $scope.age = {value: false};
+        $scope.sbp = {value: false};
+        $scope.dbp = {value: false};
+        $scope.unilateral = {value: false};
+        $scope.speech = {value: false};
+        $scope.ten = {value: false};
+        $scope.hour = {value: false};
+        $scope.diabetes = {value: false};
+        
+        $scope.calculate = function() {
+            $scope.abcd2 = 0;
+            
+            if ($scope.age.value == true){
+                $scope.abcd2 += 1;
+            };
+            if ($scope.sbp.value == true || $scope.dbp.value == true){
+                $scope.abcd2 += 1;
+            };
+            if ($scope.unilateral.value == true){
+                $scope.abcd2 += 2;
+            } else if ($scope.speech.value == true){
+                $scope.abcd2 += 1;
+            };
+            if ($scope.hour.value == true){
+                $scope.abcd2 += 2;
+            } else if ($scope.ten.value === false){
+                $scope.abcd2 += 1;
+            };
+            if ($scope.diabetes.value == true){
+                $scope.abcd2 += 1;
+            };
+            
+            if ($scope.abcd2 <= 3){
+                $scope.smartColor = "balanced";
+            } else if ($scope.abcd2 <= 5){
+                $scope.smartColor = "energized";
+            } else if ($scope.abcd2 >= 6){
+                $scope.smartColor = "assertive";
+            };
+        };
+}]);
+
+app.controller('qtcCtrl', ['$scope',
+    function($scope) {
+        $scope.smartColor = "assertive";
+        $scope.pname = "Corrected QT";
+        $scope.qtc="-";
+        $scope.showInterpret = false;
+
+
+        $scope.calculate = function() {
+            qt = document.getElementById("qt").value;
+            rr = document.getElementById("rr").value/1000;
+            $scope.qtc = roundToTwo(qt/Math.sqrt(rr)/1000);
+            
+            if ($scope.qtc > 0.44 || $scope.qtc < 0.30){
+                $scope.smartColor = "assertive";
+            } else{
+                $scope.smartColor = "balanced";
+            };
+            
+        };
+}]);
+
+
+
+
+

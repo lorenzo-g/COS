@@ -1,0 +1,64 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/nefro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            <div class="row">
+                <div class="col col-75">Age</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="age"></input>
+                                 </label></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col col-75">Weight (kg)</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="weight"></input>
+                                 </label></div>
+            </div>
+    
+            <div class="row">
+                <div class="col col-75">Serum creatinine (mg/dl)</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="creatinine"></input>
+                                 </label></div>
+            </div>
+
+            <div class="item item-divider">Gender</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="gender">
+                    <option value="1">Female</option>
+                    <option value="2">Male</option>
+                </select>
+            </label>
+    
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            eClearance
+            <span class="badge badge-{{smartColor}}">{{score}}ml/min</span>
+        </a>
+
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Normal<span class="badge badge-balanced">90 - 135</span></a>
+
+        </div>
+
+
+  </ion-content>
+</ion-pane>

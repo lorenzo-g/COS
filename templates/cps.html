@@ -1,0 +1,91 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/gastro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="gcs-view">
+            
+            <div class="item item-divider">Total bilirubin</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="bilirubin">
+                    <option value="1">Below 2 mg/dl</option>
+                    <option value="2">2 - 3 mg/dl</option>
+                    <option value="3">Above 3 mg/dl</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Serum Albumin</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="albumin">
+                    <option value="1">Above 3.5 g/dl</option>
+                    <option value="2">2.8 - 3.5 g/dl</option>
+                    <option value="3">Below 2.8 g/dl</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Prothrombin time</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="pt">
+                    <option value="1">Below 1.7</option>
+                    <option value="2">1.7 - 2.3</option>
+                    <option value="3">Above 2.3</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Ascites</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="ascites">
+                    <option value="1">None</option>
+                    <option value="2">Mild</option>
+                    <option value="3">Moderate or severe</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Hepatic encephalopathy</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="enc">
+                    <option value="1">None</option>
+                    <option value="2">Grade I - II</option>
+                    <option value="3">Grade III - IV</option>
+                </select>
+            </label>
+            <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            Score
+            <span class="badge badge-{{smartColor}}">{{class}} ({{score}})</span>
+        </a>
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <div class="item item-divider">2 year survival</div>
+            <a class="item item-icon-left">Class A (5-6)<span class="badge badge-balanced">85%</span></a>
+            <a class="item item-icon-left">Class B (7-9)<span class="badge badge-energized">57%</span></a>
+            <a class="item item-icon-left">Class C (10-15)<span class="badge badge-assertive">35%</span></a>
+        </div>
+
+
+
+  </ion-content>
+</ion-pane>

@@ -1,0 +1,64 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+      
+    <div class="list">
+
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="oddsHelp = !oddsHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/odds')">Odds ratio</h2>
+        <i ng-click="goTo('#/odds')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="oddsHelp">
+            <h5>Measure of association widely used in epidemiological studies (e.g. in case-control studies to estimate risk ratio). </h5>
+        </div>
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="rrHelp = !rrHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/rr')">Risk ratio</h2>
+        <i ng-click="goTo('#/rr')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="rrHelp">
+            <h5>Relative effect measure widely used in epidemiological studies. </h5>
+        </div>
+        
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="sensHelp = !sensHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/sensspec')">Sensitivity and specificity</h2>
+        <i ng-click="goTo('#/sensspec')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="sensHelp">
+            <h5>Sensitivity: [P(t+|d+)]: Probability of a positive test given presence of disease.<br />
+                Specificity: [P(t-|d-)]: Probability of a negative test given absence of disease.</h5>
+        </div>
+        
+        
+      <a class="item item-icon-left item-icon-right">
+        <i ng-click="pnpvHelp = !pnpvHelp" class="icon ion-ios7-information-empty dark"></i>
+          <h2 ng-click="goTo('#/pnpv')">Positive / Negative predictive values</h2>
+        <i ng-click="goTo('#/pnpv')" class="icon ion-ios7-arrow-right"></i>
+      </a>
+        
+      <div id="interpret-div" ng-show="pnpvHelp">
+            <h5>Positive predictive value: [P(d+|t+)]: Probability of presence of disease given positive test.<br />
+                Negative predictive value: [P(d-|t-)]: Probability of absence of disease given negative test.</h5>
+        </div>
+        
+
+
+     
+    </div>
+  
+
+
+  </ion-content>
+</ion-pane>

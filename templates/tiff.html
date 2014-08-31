@@ -1,0 +1,39 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/pneumo">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="or-view">
+
+            <div class="row">
+                <div class="col col-75">FEV1</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="fev1"></input>
+                                 </label></div>
+            </div>
+
+
+            <div class="row">
+                <div class="col col-75">FVC</div>
+                <div class="col"><label class="item item-input">
+                                 <input type="number" id="fvc"></input>
+                                 </label></div>
+            </div>
+    
+    
+             <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            Result
+            <span class="badge badge-{{smartColor}}">{{tiff}}</span>
+        </a>
+
+
+
+
+  </ion-content>
+</ion-pane>

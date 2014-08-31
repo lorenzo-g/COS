@@ -1,0 +1,90 @@
+<ion-pane>
+  <ion-header-bar align-title="left" class="bar bar-header bar-dark">
+	<a href="#/gastro">
+	<button class="button icon-right ion-ios7-arrow-left button-clear button-white">
+	</button></a>
+	<h1 class="title">{{pname}}</h1>
+  </ion-header-bar>
+  <ion-content class="content">
+
+        <div class="gcs-view">
+            
+            <div class="item item-divider">Appearance</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="app">
+                    <option value="0">Blue or pale all over</option>
+                    <option value="1">Acrocyanosis</option>
+                    <option value="2">Body and extremities pink</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Pulse</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="pulse">
+                    <option value="0">Absent</option>
+                    <option value="1">Below 100</option>
+                    <option value="2">Above 100</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Reflex irritability</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="reflex">
+                    <option value="0">No response to stimulation</option>
+                    <option value="1">Grimace / feeble cry when stimulated</option>
+                    <option value="2">Cry or pull away when stimulated</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Activity</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="activity">
+                    <option value="0">None</option>
+                    <option value="1">Some flexion</option>
+                    <option value="2">Flexed arms and legs that resist extension</option>
+                </select>
+            </label>
+            
+            <div class="item item-divider">Respiratory effort</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Tap
+                </div>
+                <select id="respiration">
+                    <option value="0">None</option>
+                    <option value="1">Weak, irregular, gasping</option>
+                    <option value="2">Strong, lusty cry	</option>
+                </select>
+            </label>
+            <button class="button button-block button-dark" ng-click="calculate()">Calculate</button>
+        </div>
+        <a class="item item-icon-left">
+            Score
+            <span class="badge badge-{{smartColor}}">{{score}}</span>
+        </a>
+        <button class="button button-block button-dark item-icon-right" ng-click="showInterpret = !showInterpret">
+            <i class="icon ion-ios7-arrow-down"></i>
+            How to interpret</button>
+
+        <div id="interpret-div" ng-show="showInterpret">
+            <a class="item item-icon-left">Normal<span class="badge badge-balanced">≥ 7</span></a>
+            <a class="item item-icon-left">Fairly low<span class="badge badge-energized">4 - 6</span></a>
+            <a class="item item-icon-left">Low<span class="badge badge-assertive">≤ 3</span></a>
+        </div>
+
+
+
+  </ion-content>
+</ion-pane>
