@@ -1,5 +1,5 @@
-# Athena Technological Headache-diary for ENhanced Anamnesis
+# Calculator of medical indexes, scales, and scores for firefox OS.
 
-Athena is an headache-diary, meant to help assist medical anamnesis.
+COS is a tool to help physicians and medical students calculate scores of medical interest.
 
 
